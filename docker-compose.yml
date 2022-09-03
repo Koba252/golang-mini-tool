@@ -1,0 +1,15 @@
+version: '3'
+services:
+  golang:
+    container_name: golang-mini-tool
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    environment:
+      TZ: "Asia/Tokyo"
+    working_dir: /go/usr
+    volumes:
+      - ./:/go/usr
+    command: >
+      sh
+    tty: true
